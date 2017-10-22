@@ -5,6 +5,7 @@
  */
 package Formularios;
 
+import Clases.Calculos;
 import java.net.URL;
 import javax.swing.ImageIcon;
 
@@ -13,10 +14,7 @@ import javax.swing.ImageIcon;
  * @author Reny
  */
 public class Formulario extends javax.swing.JFrame {
-
-    /**
-     * Creates new form Formulario
-     */
+    Calculos cal=new Calculos();
     public Formulario() {
         initComponents();
     }
@@ -98,8 +96,12 @@ public class Formulario extends javax.swing.JFrame {
     private void btnAceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAceptarActionPerformed
         // TODO add your handling code here:
         String pal;
-        String pat="/images/Plantilla.png";
-       URL url=this.getClass().getResource(pat) ;
+        String pat;
+        pat=txtPalabra.getText();
+        cal.Caracteres(pat);
+        pal=cal.Transformacion();
+        
+       URL url=this.getClass().getResource(pal) ;
        ImageIcon icon=new ImageIcon(url);
         lblImg.setIcon(icon);
     }//GEN-LAST:event_btnAceptarActionPerformed

@@ -5,6 +5,8 @@
  */
 package proyecto.braille;
 
+import java.util.Scanner;
+
 /**
  *
  * @author Reny
@@ -16,6 +18,17 @@ public class ProyectoBraille {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        Scanner sc=new Scanner(System.in);
+        String a[],b[];
+        String n;
+        n=sc.next();
+        a=new String[n.length()];
+        for (int i = 0; i <a.length; i++) {
+            a[i]=n.charAt(i)+"";
+        }
+        for (int i = 0; i <n.length(); i++) {
+            System.out.println(""+a[i]);
+        }
     }
     
 }
